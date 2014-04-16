@@ -10,7 +10,8 @@ do
 			echo "SUCCESS!"
 			for file in $(ls *.bin)
 			do
-				openssl enc -d -$cipher -in $file -out $out.txt -pass pass:$password
+				echo $file
+				openssl enc -d -$cipher -in $file -out $file.txt -pass pass:$password
 			done
 			break
 		fi
